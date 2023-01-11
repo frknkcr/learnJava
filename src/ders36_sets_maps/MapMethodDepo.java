@@ -1,8 +1,6 @@
 package ders36_sets_maps;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class MapMethodDepo {
 
@@ -12,7 +10,7 @@ public class MapMethodDepo {
 
         Map<Integer,String> ogrenciMap = new HashMap<>();
 
-        ogrenciMap.put(101,"Ali-Can-11-H-Mf");
+        ogrenciMap.put(101,"Ali-Can-12-H-MF");
         ogrenciMap.put(102,"Veli-Cem-10-K-TM");
         ogrenciMap.put(103,"Ali-Cem-11-K-TM");
         ogrenciMap.put(104,"Ayse-Can-10-H-MF");
@@ -105,5 +103,114 @@ public class MapMethodDepo {
         ogrenciMap.put(okulNo,yeniValue);
 
         return ogrenciMap;
+    }
+
+    public static void sinifListesiYazdirma(Map<Integer, String> ogrenciMap, String sinif) {
+
+        // 101=Ali-Can-11-H-MF
+
+        System.out.println("No isim soyisim bolum");
+        System.out.println("=====================");
+
+        for (Map.Entry<Integer, String> eachEntry : ogrenciMap.entrySet()) {
+
+            String entryValue = eachEntry.getValue();
+            String[] valueArr = entryValue.split("-");
+            if (valueArr[2].equalsIgnoreCase(sinif)){
+                System.out.println(eachEntry.getKey() + " " +
+                        valueArr[0] +" "+
+                        valueArr[1]+ " "+
+                        valueArr[4]);
+            }
+        }
+
+
+    }
+
+    public static void bolumListesiOlusturma(Map<Integer, String> ogrenciMap, String bolum) {
+
+        for (Map.Entry<Integer, String> eachEntry : ogrenciMap.entrySet()) {
+
+            String entryValue = eachEntry.getValue();
+            String[] valueArr = entryValue.split("-");
+
+            if (valueArr[4].equalsIgnoreCase(bolum)){
+                System.out.println(eachEntry.getKey() + " " +
+                        valueArr[0] +" "+
+                        valueArr[1]+ " "+
+                        valueArr[4]);
+            }
+        }
+
+
+    }
+
+    public static Map<Integer, String> soyisimleriBuyukHarfYap(Map<Integer, String> ogrenciMap) {
+
+
+        for (Map.Entry<Integer, String> eachEntry : ogrenciMap.entrySet()) {
+
+            String entryValue = eachEntry.getValue();
+            String[] valueArr = entryValue.split("-");
+
+            valueArr[1] = valueArr[1].toUpperCase();
+
+            ogrenciMap.put(eachEntry.getKey(),valueArr[0]+"-"+valueArr[1]+"-"+valueArr[2]+"-"+valueArr[3]+"-"+valueArr[4]);
+
+        }
+
+        return ogrenciMap;
+    }
+
+    public static void tumListeYazdir(Map<Integer, String> ogrenciMap) {
+
+        Set<Map.Entry<Integer, String>> ongrenciEntrySet = ogrenciMap.entrySet();
+
+        for (Map.Entry<Integer,String> entryEach: ongrenciEntrySet){
+            System.out.println(entryEach);
+        }
+
+    }
+
+    public static Map<Integer, String> siniflariArttir(Map<Integer, String> ogrenciMap) {
+
+        for (Map.Entry<Integer, String> entryEach : ogrenciMap.entrySet()) {
+
+            String[] valueArr = entryEach.getValue().split("-");
+
+            int sinif = Integer.parseInt(valueArr[2]);
+            if (sinif <= 11){
+                valueArr[2] = Integer.toString(++sinif);
+            }else {
+                valueArr[2] = "Mezun";
+            }
+            entryEach.setValue(valueArr[0]+"-"+valueArr[1]+"-"+valueArr[2]+"-"+valueArr[3]+"-"+valueArr[4]);
+        }
+
+
+        return ogrenciMap;
+    }
+
+    public static void sinifSiraliListeOlustur(Map<Integer, String> ogrenciMap) {
+
+        Set<String> ogrenciSirali = new TreeSet<>();
+
+        for (Map.Entry<Integer, String> eachEntry : ogrenciMap.entrySet()) {
+
+            String[] entryValueArr = eachEntry.getValue().split("-");
+
+            String list = entryValueArr[2]+"-"+entryValueArr[3]+
+                    "-"+entryValueArr[0]+"-"+entryValueArr[1];
+
+            ogrenciSirali.add(list);
+
+        }
+        for (String s : ogrenciSirali) {
+
+            System.out.println(s);
+
+        }
+
+
     }
 }

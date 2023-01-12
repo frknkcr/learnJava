@@ -4,7 +4,7 @@ import ders36_sets_maps.MapMethodDepo;
 
 import java.util.Map;
 
-public class C07_sinifaGoreSİraliListeYazdir {
+public class C07_sinifaGoreSiraliListeYazdir {
     public static void main(String[] args) {
 
         // tum ogrenci listesini
@@ -14,7 +14,7 @@ public class C07_sinifaGoreSİraliListeYazdir {
 
         Map<Integer, String> ogrenciMap = MapMethodDepo.ogrenciMapOlustur();
 
-        MapMethodDepo.sinifSiraliListeOlustur(ogrenciMap);
+        MapMethodDepo.sinifSiraliListeYazdir(ogrenciMap);
 
     }
 }

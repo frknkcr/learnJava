@@ -27,7 +27,7 @@ public class C04_Compute {
         }
         System.out.println(harfSayilari);
 
-        // 2. yöntem
+        // 2. yöntem compute
         Map<String,Integer> hardSayilari2 =new TreeMap<>();
 
         for (String s : arr) {

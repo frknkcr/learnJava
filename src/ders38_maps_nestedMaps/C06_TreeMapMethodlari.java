@@ -1,6 +1,5 @@
 package ders38_maps_nestedMaps;
 
-import java.util.Map;
 import java.util.TreeMap;
 
 public class C06_TreeMapMethodlari {

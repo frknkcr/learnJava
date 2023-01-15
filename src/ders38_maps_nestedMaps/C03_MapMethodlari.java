@@ -29,6 +29,19 @@ public class C03_MapMethodlari {
 
         System.out.println(ogrenciMap.get(103)); // Ali-Cem-12-K-TM
 
+        System.out.println(ogrenciMap.replace(123, "Ali-Cem-12-K-TM")); // null
+
+        System.out.println(ogrenciMap);
+
+        ogrenciMap.replace(103,"Ali-Cem-12-K-TM","Ali-Han-12-K-TM");
+
+        System.out.println(ogrenciMap.get(103)); // Ali-Han-12-K-TM
+
+        ogrenciMap.replace(103,"Ali-Cem-12-K-TM","Kemal-Han-12-K-TM");
+
+        System.out.println(ogrenciMap.get(103)); // Ali-Han-12-K-TM
+
+        // kontrol eder, eski value verilen deger ile ayni ise degistirir, yoksa degistirmez
 
 
 

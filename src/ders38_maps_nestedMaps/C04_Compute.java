@@ -12,28 +12,28 @@ public class C04_Compute {
 
         String[] arr = {"A","C","B","N","A","N","A"};
 
-        Map<String,Integer> hardSayilari =new TreeMap<>();
+        Map<String,Integer> harfSayilari =new TreeMap<>();
 
         // 1. yöntem
 
         for (String s : arr) {
 
-            if (!hardSayilari.containsKey(s)) {
+            if (!harfSayilari.containsKey(s)) {
 
-                hardSayilari.put(s, 1);
+                harfSayilari.put(s, 1);
             } else {
-                hardSayilari.put(s, (hardSayilari.get(s) + 1));
+                harfSayilari.put(s, (harfSayilari.get(s) + 1));
             }
         }
-        System.out.println(hardSayilari);
+        System.out.println(harfSayilari);
 
         // 2. yöntem
         Map<String,Integer> hardSayilari2 =new TreeMap<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for (String s : arr) {
 
-            hardSayilari2.computeIfPresent(arr[i],(k,v) -> v+1);
-            hardSayilari2.computeIfAbsent(arr[i],v->1);
+            hardSayilari2.computeIfPresent(s, (k, v) -> v + 1);
+            hardSayilari2.computeIfAbsent(s, v -> 1);
 
         }
         System.out.println(hardSayilari2);

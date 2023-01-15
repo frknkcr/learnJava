@@ -33,13 +33,12 @@ public class C01_CumledeHarfSayilariniBulma {
             if (!kullanimSayilariMap.containsKey(s)) {
                 kullanimSayilariMap.put(s, 1);
             } else {
-                int eksiValue = kullanimSayilariMap.get(s);
-                kullanimSayilariMap.put(s, eksiValue+1);
+                kullanimSayilariMap.put(s,(kullanimSayilariMap.get(s))+1 );
             }
 
         }
 
-        System.out.println(kullanimSayilariMap);
+        System.out.println(kullanimSayilariMap); // {J=1, a=3, c=1, d=1, i=1, n=1, r=1, v=1}
 
 
     }

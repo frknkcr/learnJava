@@ -31,7 +31,6 @@ public class C001_RecursiveMethods {
         for (int i = 0; i <= sayi; i++) {
             toplam += i;
         }
-
         System.out.println("For loop ile toplam: "+toplam);
     }
 }
